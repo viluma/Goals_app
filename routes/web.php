@@ -13,7 +13,9 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('category.create');
-});
-Route::post('/',[PagesController::class, 'category.store']);
+Route::get('/index', function () {
+    return view('index');
+ });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
